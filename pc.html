@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Captains - PC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'ValiantTimes';
+      src: url('valianttimes.ttf') format('truetype');
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Anton', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-bottom: 2px solid red;
+    }
+
+    header img {
+      height: 85px;
+      margin-left: -30px;
+      margin-top: -40px;
+      margin-bottom: -40px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      background-color: red;
+      transform: scale(1.1);
+    }
+
+    .title-section {
+      padding: 40px 20px 20px;
+    }
+
+    .title-section h1 {
+      font-size: 60px;
+      text-shadow: 2px 2px 10px red;
+    }
+
+    .title-section h2 {
+      font-size: 30px;
+      color: #c0c0c0;
+      margin-top: 10px;
+    }
+
+    .captains-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 40px 20px;
+    }
+
+    .captain {
+      flex: 1;
+      min-width: 200px;
+      margin: 20px;
+    }
+
+    .captain a img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid red;
+      background-color: #222;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .captain a img:hover {
+      transform: scale(1.05);
+    }
+
+    .captain-name {
+      font-size: 24px;
+      color: white;
+      margin-top: 10px;
+    }
+
+    .game-title {
+      font-size: 18px;
+      margin-top: 10px;
+      color: white;
+    }
+
+    .game-description {
+      font-size: 12px;
+      margin-top: 10px;
+      color: white;
+      max-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+	  background-color: transparent;
+	  width: 100%;
+      top: 30px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      width: 100%;
+      background-color: rgba(30, 30, 30, 0.8);
+      color: white; 
+      padding: 10px 0;
+      text-align: center;       
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 5px 0;
+	  transition: all 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: red;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo">
+    <nav>
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="#">TEAM</a>
+        <div class="dropdown-content">
+          <a href="vr.html">VR</a>
+          <a href="pc.html">PC</a>
+        </div>
+      </div>
+      <a href="about.html">ABOUT</a>
+      <a href="social.html">SOCIAL</a>
+      <a href="sponsors.html">SPONSORS</a>
+    </nav>
+  </header>
+
+  <section class="title-section">
+    <h1>ROSTERS&nbsp;</h1>
+    <h2>CAPTAINS&nbsp;</h2>
+  </section>
+
+  <section class="captains-container">
+    <div class="captain">
+      <a href="cod.html">
+      <img src="cod.png" alt="Call of Duty Logo">
+      </a>
+      <div class="captain-name">1Spooky</div>
+      <div class="game-title">CALL OF DUTY</div>
+      <div class="game-description">
+        CALL OF DUTY IS A FIRST-PERSON SHOOTER SERIES KNOWN FOR ITS INTENSE MULTIPLAYER ACTION, MODERN WARFARE SETTINGS, AND ESPORTS SCENE. AVAILABLE ON MULTIPLE PLATFORMS INCLUDING PC AND CONSOLES.
+      </div>
+    </div>
+
+    <div class="captain">
+      <a href="valorant.html">
+      <img src="valorant.png" alt="Valorant Logo">
+      </a>
+      <div class="captain-name">Cat</div>
+      <div class="game-title">VALORANT</div>
+      <div class="game-description">
+        VALORANT IS A 5V5 CHARACTER-BASED TACTICAL SHOOTER DEVELOPED BY RIOT GAMES. IT FEATURES UNIQUE AGENTS, ABILITIES, AND A STRONG COMPETITIVE SCENE ON PC.
+      </div>
+    </div>
+
+    <div class="captain">
+      <a href="apex.html">
+      <img src="apex.png" alt="Apex Legends Logo">
+      </a>
+      <div class="captain-name">iLikeTrees</div>
+      <div class="game-title">APEX LEGENDS</div>
+      <div class="game-description">
+        APEX LEGENDS IS A FREE-TO-PLAY BATTLE ROYALE SHOOTER FROM RESPWN ENTERTAINMENT. SET IN THE TITANFALL UNIVERSE, IT FEATURES LEGENDARY CHARACTERS AND FAST-PACED COMBAT.
+      </div>
+    </div>
+
+    <div class="captain">
+      <a href="rocketleague.html">
+      <img src="rocketleague.png" alt="Rocket League Logo">
+      </a>
+      <div class="captain-name">compjuliann</div>
+      <div class="game-title">ROCKET LEAGUE</div>
+      <div class="game-description">
+        ROCKET LEAGUE COMBINES SOCCER WITH ROCKET-POWERED CARS IN A HIGH-OCTANE COMPETITIVE GAME. POPULAR ON PC FOR ITS ESPORTS SCENE AND MECHANICAL SKILL CAP.
+      </div>
+    </div>
+
+    <div class="captain">
+      <a href="rainbowsix.html">
+      <img src="rainbow.png" alt="Rainbow Six Logo">
+      </a>
+      <div class="captain-name">hxushh</div>
+      <div class="game-title">RAINBOW SIX SIEGE</div>
+      <div class="game-description">
+        TOM CLANCY'S RAINBOW SIX SIEGE IS A TACTICAL FIRST-PERSON SHOOTER DEVELOPED BY UBISOFT. THE GAME FOCUSES ON TEAM-BASED GAMEPLAY.
+      </div>
+    </div>
+  </section>
+</body>
+</html>

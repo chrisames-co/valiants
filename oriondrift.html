@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Orion Drift Roster - GTC</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Anton', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-bottom: 2px solid red;
+    }
+
+    header img {
+      height: 85px;
+      margin-left: -30px;
+      margin-top: -40px;
+      margin-bottom: -40px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      border-radius: 4px;
+    }
+
+    nav a:hover {
+      background-color: red;
+      transform: scale(1.1);
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: transparent;
+      width: 100%;
+      top: 30px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      width: 100%;
+      background-color: rgba(30, 30, 30, 0.8);
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: red;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .title-section {
+      padding: 40px 20px 20px;
+    }
+
+    .title-section h1 {
+      font-size: 60px;
+      text-shadow: 2px 2px 10px red;
+    }
+
+    .title-section h2 {
+      font-size: 30px;
+      color: #c0c0c0;
+      margin-top: 10px;
+    }
+
+    .switch-buttons {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .switch-buttons input[type="radio"] {
+      display: none;
+    }
+
+    .switch-buttons label {
+      background-color: #2e2e2e;
+      color: white;
+      padding: 10px 20px;
+      border: 2px solid red;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+
+    .switch-buttons input[type="radio"]:checked + label {
+      background-color: red;
+      transform: scale(1.1);
+    }
+
+    .players-container {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+      padding: 40px 20px;
+      justify-items: center;
+    }
+
+    .player-card {
+      background-color: #2e2e2e;
+      border: 2px solid red;
+      border-radius: 12px;
+      padding: 20px;
+      width: 200px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .player-card:hover {
+      transform: scale(1.05);
+    }
+
+    .player-img {
+      width: 100px;
+      height: 100px;
+      background-color: #111;
+      border-radius: 50%;
+      margin: 0 auto 15px;
+      border: 2px solid white;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .player-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .player-name {
+      font-size: 20px;
+      color: white;
+      margin-top: 10px;
+    }
+
+    .player-role-img {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .player-role-img img {
+      width: 40px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo">
+    <nav>
+      <a href="index.html">HOME</a>
+      <div class="dropdown">
+        <a href="#">TEAM</a>
+        <div class="dropdown-content">
+          <a href="vr.html">VR</a>
+          <a href="pc.html">PC</a>
+        </div>
+      </div>
+      <a href="#">ABOUT</a>
+      <a href="social.html">SOCIAL</a>
+      <a href="#">SPONSORS</a>
+    </nav>
+  </header>
+
+  <section class="title-section">
+    <h1>Orion Drift ROSTER</h1>
+    <h2>VALIANTS E-SPORTS&nbsp;</h2>
+  </section>
+
+  <div class="switch-buttons">
+    <input type="radio" id="naToggle" name="rosterToggle" checked onclick="showRoster('na')">
+    <label for="naToggle">NA</label>
+    <input type="radio" id="euToggle" name="rosterToggle" onClick="showRoster('eu')">
+    <label for="euToggle">EU</label>
+  </div>
+
+  <div id="playerCount" style="font-size: 24px; color: white; margin-top: 30px;"></div>
+
+  <!-- NA Roster -->
+  <section id="naRoster" class="players-container">
+    <!-- Example Player Cards -->
+    <div class="player-card">
+      <div class="player-img">
+        <img src="Neko - Orion.png" alt="Momentum">
+      </div>
+      <div class="player-name">Neko</div>
+      <div class="player-role-img">
+        <img src="V_cap.png" alt="Captain Icon">
+      </div>
+    </div>
+	  <div class="player-card">
+      <div class="player-img">
+        <img src="Slip- Orion GTC.png" alt="Momentum">
+      </div>
+      <div class="player-name">Slip</div>
+      <div class="player-role-img">
+        <img src="V_Main_line.png" alt="Captain Icon">
+      </div>
+    </div>
+	  <div class="player-card">
+      <div class="player-img">
+        <img src="Nuggs - Orion.png" alt="Momentum">
+      </div>
+      <div class="player-name">Nuggs</div>
+      <div class="player-role-img">
+        <img src="V_Main_line.png" alt="Captain Icon">
+      </div>
+    </div>
+	  <div class="player-card">
+      <div class="player-img">
+        <img src="Plunge - Orion.png" alt="Momentum">
+      </div>
+      <div class="player-name">Plunge</div>
+      <div class="player-role-img">
+        <img src="V_Main_line.png" alt="Captain Icon">
+      </div>
+    </div>
+	  <div class="player-card">
+      <div class="player-img">
+        <img src="WizardGecko- Orion.png" alt="Momentum">
+      </div>
+      <div class="player-name">WizardGek0</div>
+      <div class="player-role-img">
+        <img src="V_SUB.png" alt="Captain Icon">
+      </div>
+    </div>
+    <!-- Add more cards as needed -->
+  </section>
+
+  <!-- EU Roster -->
+  <section id="euRoster" class="players-container" style="display: none;">
+    <div class="player-card">
+      <div class="player-img">
+        <img src="No Player.png" alt="Momentum">
+      </div>
+      <div class="player-name">N/A</div>
+      <div class="player-role-img">
+        <img src="V_SUB.png" alt="Captain Icon">
+      </div>
+    </div>
+	  <div class="player-card">
+      <div class="player-img">
+        <img src="No Player.png" alt="Momentum">
+      </div>
+      <div class="player-name">N/A</div>
+      <div class="player-role-img">
+        <img src="V_SUB.png" alt="Captain Icon">
+      </div>
+    </div>
+	  <div class="player-card">
+      <div class="player-img">
+        <img src="No Player.png" alt="Momentum">
+      </div>
+      <div class="player-name">N/A</div>
+      <div class="player-role-img">
+        <img src="V_SUB.png" alt="Captain Icon">
+      </div>
+    </div>
+	  <div class="player-card">
+      <div class="player-img">
+        <img src="No Player.png" alt="Momentum">
+      </div>
+      <div class="player-name">N/A</div>
+      <div class="player-role-img">
+        <img src="V_SUB.png" alt="Captain Icon">
+      </div>
+    </div>
+	  <div class="player-card">
+      <div class="player-img">
+        <img src="No Player.png" alt="Momentum">
+      </div>
+      <div class="player-name">N/A</div>
+      <div class="player-role-img">
+        <img src="V_SUB.png" alt="Captain Icon">
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align: center; margin-bottom: 50px;">
+    <a href="vr.html" style="
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 20px;
+      background-color: red;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      ← Back to VR Rosters
+    </a>
+  </div>
+
+  <script>
+  function showRoster(roster) {
+    const naRoster = document.getElementById("naRoster");
+    const euRoster = document.getElementById("euRoster");
+    const playerCountDiv = document.getElementById("playerCount");
+
+    // Show the selected roster, hide the other
+    if (roster === 'na') {
+      naRoster.style.display = 'grid';
+      euRoster.style.display = 'none';
+
+      // Count valid players in NA roster
+      const players = naRoster.querySelectorAll(".player-name");
+      let validCount = 0;
+      players.forEach(player => {
+        if (player.innerText.trim() !== "N/A") {
+          validCount++;
+        }
+      });
+      playerCountDiv.innerText = `NA Roster - ${validCount} Player${validCount !== 1 ? 's' : ''}`;
+    } else {
+      euRoster.style.display = 'grid';
+      naRoster.style.display = 'none';
+
+      // Count valid players in EU roster
+      const players = euRoster.querySelectorAll(".player-name");
+      let validCount = 0;
+      players.forEach(player => {
+        if (player.innerText.trim() !== "N/A") {
+          validCount++;
+        }
+      });
+      playerCountDiv.innerText = `EU Roster - ${validCount} Player${validCount !== 1 ? 's' : ''}`;
+    }
+  }
+
+  // Call once on load to count initial roster
+  window.onload = () => showRoster('na');
+</script>
+
+</body>
+</html>

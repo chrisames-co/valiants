@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Valiants E-Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      font-family: 'Anton', sans-serif;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      justify-content: space-between;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: rgba(30, 30, 30, 0.8);
+      border-bottom: 2px solid red;
+      backdrop-filter: blur(10px);
+      z-index: 999;
+      position: sticky;
+      top: 0;
+    }
+
+    header img {
+      height: 85px;
+      margin-left: -30px;
+      margin-top: -40px;
+      margin-bottom: -40px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background-color: red;
+      transform: scale(1.1);
+      box-shadow: 0 0 10px red;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: transparent;
+      width: 100%;
+      top: 30px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      width: 100%;
+      background-color: rgba(30, 30, 30, 0.8);
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: red;
+      border: 1px solid white;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 120px 20px;
+      border-radius: 15px;
+      animation: slideIn 1.2s ease-out;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      text-shadow: 3px 3px 15px red;
+      color: white;
+      animation: glow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px red; }
+      to { text-shadow: 0 0 20px white, 0 0 30px red; }
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-top: 20px;
+      color: #c0c0c0;
+      opacity: 0;
+      animation: fadeInText 2s forwards 1s;
+    }
+
+    @keyframes fadeInText {
+      to { opacity: 1; }
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .cta a {
+      background-color: red;
+      color: white;
+      text-decoration: none;
+      padding: 16px 32px;
+      font-size: 22px;
+      border-radius: 8px;
+    }
+
+    .cta a:hover {
+      background-color: white;
+      color: red;
+    }
+
+    .stats-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 60px 20px;
+      color: white;
+      font-family: 'Anton', sans-serif;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    .stat-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .stat-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    }
+
+    .stat-box h2 {
+      font-size: 48px;
+      margin: 0;
+      color: red;
+    }
+
+    .stat-box p {
+      font-size: 18px;
+      margin-top: 8px;
+      color: white;
+    }
+
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .about h2 {
+      font-size: 40px;
+      text-shadow: 1px 1px 6px red;
+      color: white;
+    }
+
+    .about p {
+      font-size: 18px;
+      margin-top: 20px;
+      color: #ccc;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeInText 2s forwards 0s; /* Removed delay for "Our Mission" */
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      border-top: 2px solid red;
+      position: relative;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo">
+    <nav>
+      <a href="#">HOME</a>
+      <div class="dropdown">
+        <a href="#">TEAM</a>
+        <div class="dropdown-content">
+          <a href="vr.html">VR</a>
+          <a href="pc.html">PC</a>
+        </div>
+      </div>
+      <a href="about.html">ABOUT</a>
+      <a href="social.html">SOCIAL</a>
+      <a href="sponsors.html">SPONSORS</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>WELCOME TO VALIANTS E-SPORTS</h1>
+    <p>Where passion meets performance in the world of competitive gaming.</p>
+  </section>
+
+  <div class="cta">
+    <a href="https://discord.gg/gRJ7QBP2" target="_blank">Join The Action</a>
+  </div>
+
+  <section class="stats-section">
+    <div class="stat-box">
+      <h2>7800</h2>
+      <p>Discord Members</p>
+    </div>
+    <div class="stat-box">
+      <h2>34</h2>
+      <p>Team Players</p>
+    </div>
+    <div class="stat-box">
+      <h2>9</h2>
+      <p>Games</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>OUR MISSION</h2>
+    <p>
+      Valiants E-Sports is dedicated to building an elite community of VR and PC competitors. From VR E-Sports to PC E-Sports, we strive to lead the way in fair play, training, and teamwork.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Valiant E-Sports. All rights reserved.</p>
+  </footer>
+</body>
+</html>
