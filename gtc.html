@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orion Drift Roster - GTC</title>
+  <title>GTC Roster - Valiants E-Sports</title>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <style>
     * {
@@ -34,6 +34,11 @@
       margin-left: -30px;
       margin-top: -40px;
       margin-bottom: -40px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
     }
 
     nav a {
@@ -149,10 +154,160 @@
       margin-top: 10px;
     }
 
+    .player-role-img {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .player-role-img img {
       width: 40px;
       height: auto;
-      margin-top: 8px;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      /* Header and Navigation */
+      header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 8px 8px 0;
+      }
+
+      header img {
+        height: 50px;
+        margin: 0 8px 0 -15px;
+      }
+
+      nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+      }
+
+      nav a {
+        margin: 0 6px;
+        padding: 5px 8px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 1;
+      }
+
+      .dropdown {
+        width: auto;
+        margin: 0 6px;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        width: 80px;
+        background-color: transparent;
+      }
+
+      .dropdown-content a {
+        margin: 2px 0;
+        padding: 5px;
+        font-size: 13px;
+        border-radius: 4px;
+        line-height: 1;
+      }
+
+      /* Player Cards */
+      .players-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px 10px;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .player-card {
+        width: 150px;
+        padding: 15px;
+      }
+
+      .player-img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+      }
+
+      .player-name {
+        font-size: 16px;
+        margin-top: 8px;
+      }
+
+      .player-role-img img {
+        width: 30px;
+      }
+    }
+
+    /* Extra Small Devices */
+    @media (max-width: 480px) {
+      header img {
+        height: 40px;
+        margin: 0 6px 0 -10px;
+      }
+
+      nav a, .dropdown-content a {
+        font-size: 11px;
+        padding: 4px 6px;
+        margin: 0 4px;
+      }
+
+      .dropdown {
+        margin: 0 4px;
+      }
+
+      .dropdown-content {
+        width: 70px;
+      }
+
+      /* Player Cards */
+      .players-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px 8px;
+      }
+
+      .player-card {
+        width: 135px;
+        padding: 12px;
+      }
+
+      .player-img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 8px;
+      }
+
+      .player-name {
+        font-size: 14px;
+        margin-top: 6px;
+      }
+
+      .player-role-img img {
+        width: 25px;
+      }
+    }
+
+    /* Very Narrow Screens */
+    @media (max-width: 360px) {
+      .players-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .player-card {
+        width: 140px;
+        padding: 12px;
+      }
     }
   </style>
 </head>
@@ -181,7 +336,7 @@
 
   <div id="playerCount" style="font-size: 24px; color: white; margin-top: 30px;"></div>
 
-  <!-- Single Roster (NA shown by default) -->
+  <!-- Single Roster -->
   <section id="roster" class="players-container">
     <div class="player-card"><div class="player-img"><img src="Momentum - GTC.png" alt="Momentum"></div><div class="player-name">Momentum</div><div class="player-role-img"><img src="V_cap.png" alt="Captain Icon"></div></div>
     <div class="player-card"><div class="player-img"><img src="Kawaii - GTC.png" alt="Kawaii"></div><div class="player-name">Kawaii</div><div class="player-role-img"><img src="V_cap.png" alt="Driver Icon"></div></div>
