@@ -42,6 +42,11 @@
       margin-bottom: -40px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
     nav a {
       color: white;
       margin: 0 15px;
@@ -55,6 +60,42 @@
     nav a:hover {
       background-color: red;
       transform: scale(1.1);
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: transparent;
+      width: 100%;
+      top: 30px;
+      left: 0;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      display: block;
+      width: 100%;
+      background-color: rgba(30, 30, 30, 0.8);
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: red;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     .title-section {
@@ -120,40 +161,161 @@
       margin-right: auto;
     }
 
-    .dropdown {
-      position: relative;
-      display: inline-block;
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      /* Header and Navigation */
+      header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 8px 8px 0;
+      }
+
+      header img {
+        height: 50px;
+        margin: 0 8px 0 -15px;
+      }
+
+      nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+      }
+
+      nav a {
+        margin: 0 6px;
+        padding: 5px 8px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 1;
+      }
+
+      .dropdown {
+        width: auto;
+        margin: 0 6px;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        width: 80px;
+        background-color: transparent;
+      }
+
+      .dropdown-content a {
+        margin: 2px 0;
+        padding: 5px;
+        font-size: 13px;
+        border-radius: 4px;
+        line-height: 1;
+      }
+
+      /* Captain Cards */
+      .captains-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 20px 10px;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .captain {
+        min-width: 150px;
+        margin: 15px;
+      }
+
+      .captain a img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .captain-name {
+        font-size: 20px;
+        margin-top: 8px;
+      }
+
+      .game-title {
+        font-size: 16px;
+        margin-top: 8px;
+      }
+
+      .game-description {
+        font-size: 11px;
+        max-width: 180px;
+        margin-top: 8px;
+      }
     }
 
-    .dropdown-content {
-      display: none;
-      position: absolute;
-	  background-color: transparent;
-	  width: 100%;
-      top: 30px;
-      left: 0;
-      z-index: 1;
+    /* Extra Small Devices */
+    @media (max-width: 480px) {
+      header img {
+        height: 40px;
+        margin: 0 6px 0 -10px;
+      }
+
+      nav a, .dropdown-content a {
+        font-size: 11px;
+        padding: 4px 6px;
+        margin: 0 4px;
+      }
+
+      .dropdown {
+        margin: 0 4px;
+      }
+
+      .dropdown-content {
+        width: 70px;
+      }
+
+      /* Captain Cards */
+      .captains-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 20px 8px;
+      }
+
+      .captain {
+        min-width: 135px;
+        margin: 12px;
+      }
+
+      .captain a img {
+        width: 90px;
+        height: 90px;
+      }
+
+      .captain-name {
+        font-size: 18px;
+        margin-top: 6px;
+      }
+
+      .game-title {
+        font-size: 14px;
+        margin-top: 6px;
+      }
+
+      .game-description {
+        font-size: 10px;
+        max-width: 160px;
+        margin-top: 6px;
+      }
     }
 
-    .dropdown-content a {
-      display: block;
-      width: 100%;
-      background-color: rgba(30, 30, 30, 0.8);
-      color: white; 
-      padding: 10px 0;
-      text-align: center;       
-      text-decoration: none;
-      border-radius: 6px;
-      margin: 5px 0;
-	  transition: all 0.3s ease;
-    }
+    /* Very Narrow Screens */
+    @media (max-width: 360px) {
+      .captains-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
 
-    .dropdown-content a:hover {
-      background-color: red;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
+      .captain {
+        min-width: 140px;
+        margin: 12px;
+      }
     }
   </style>
 </head>
@@ -176,8 +338,8 @@
   </header>
 
   <section class="title-section">
-    <h1>ROSTERS&nbsp;</h1>
-    <h2>CAPTAINS&nbsp;</h2>
+    <h1>ROSTERS</h1>
+    <h2>CAPTAINS</h2>
   </section>
 
   <section class="captains-container">
@@ -200,14 +362,13 @@
     </div>
 
     <div class="captain">
-  <a href="cgt.html">
-    <img src="cgt.png" alt="CGT Logo">
-  </a>
-  <div class="captain-name">FORTUNE</div>
-  <div class="game-title">CGT</div>
-  <div class="game-description">COMP GORILLA TAG (CGT) IS A COMPETITIVE LEAGUE DEDICATED TO GORILLA TAG...</div>
-</div>
-
+      <a href="cgt.html">
+        <img src="cgt.png" alt="CGT Logo">
+      </a>
+      <div class="captain-name">FORTUNE</div>
+      <div class="game-title">CGT</div>
+      <div class="game-description">COMP GORILLA TAG (CGT) IS A COMPETITIVE LEAGUE DEDICATED TO GORILLA TAG...</div>
+    </div>
 
     <div class="captain">
       <a href="breachers.html">
@@ -222,7 +383,7 @@
       <a href="vail.html">
         <img src="vail.png" alt="VAIL Logo">
       </a>
-      <div class="captain-name">Integrity & Takashi</div>
+      <div class="captain-name">INTEGRITY & TAKASHI</div>
       <div class="game-title">VAIL</div>
       <div class="game-description">VAIL VR IS A MULTIPLAYER VIRTUAL REALITY (VR) TACTICAL SHOOTER DEVELOPED BY AXELAR...</div>
     </div>
