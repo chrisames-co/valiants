@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Sponsors - GTC</title>
+  <title>Our Sponsors - Valiants E-Sports</title>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <style>
     * {
@@ -14,12 +14,12 @@
 
     body {
       font-family: 'Anton', sans-serif;
-	  background: url('background.jpg') no-repeat center center fixed;
+      background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: white;
-	  justify-content: space-between
+      justify-content: space-between;
       animation: fadeIn 1s ease-in;
-	  text-align: center;
+      text-align: center;
     }
 
     header {
@@ -40,6 +40,11 @@
       margin-left: -30px;
       margin-top: -40px;
       margin-bottom: -40px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
     }
 
     nav a {
@@ -66,8 +71,8 @@
     .dropdown-content {
       display: none;
       position: absolute;
-	  background-color: transparent;
-	  width: 100%;
+      background-color: transparent;
+      width: 100%;
       top: 30px;
       left: 0;
       z-index: 1;
@@ -77,13 +82,13 @@
       display: block;
       width: 100%;
       background-color: rgba(30, 30, 30, 0.8);
-      color: white; 
+      color: white;
       padding: 10px 0;
-      text-align: center;       
+      text-align: center;
       text-decoration: none;
       border-radius: 6px;
       margin: 5px 0;
-	  transition: all 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .dropdown-content a:hover {
@@ -153,6 +158,174 @@
       text-transform: uppercase;
       letter-spacing: 2px;
     }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      /* Header and Navigation */
+      header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 8px 8px 0;
+      }
+
+      header img {
+        height: 50px;
+        margin: 0 8px 0 -15px;
+      }
+
+      nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+      }
+
+      nav a {
+        margin: 0 6px;
+        padding: 5px 8px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 1;
+      }
+
+      .dropdown {
+        width: auto;
+        margin: 0 6px;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        width: 80px;
+        background-color: transparent;
+      }
+
+      .dropdown-content a {
+        margin: 2px 0;
+        padding: 5px;
+        font-size: 13px;
+        border-radius: 4px;
+        line-height: 1;
+      }
+
+      /* Sponsor Cards */
+      .sponsors-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px 10px;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .sponsor-card {
+        width: 150px;
+        padding: 15px;
+      }
+
+      .sponsor-img {
+        height: 100px;
+        margin-bottom: 15px;
+      }
+
+      .sponsor-name {
+        font-size: 16px;
+        letter-spacing: 1px;
+        margin-top: 8px;
+      }
+
+      .sponsor-link:hover .sponsor-card {
+        transform: none; /* Disable transform on mobile */
+        box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+      }
+
+      /* Title Section */
+      .title-section {
+        padding: 30px 15px;
+      }
+
+      .title-section h1 {
+        font-size: 40px;
+      }
+
+      .title-section h2 {
+        font-size: 20px;
+      }
+    }
+
+    /* Extra Small Devices */
+    @media (max-width: 480px) {
+      header img {
+        height: 40px;
+        margin: 0 6px 0 -10px;
+      }
+
+      nav a, .dropdown-content a {
+        font-size: 11px;
+        padding: 4px 6px;
+        margin: 0 4px;
+      }
+
+      .dropdown {
+        margin: 0 4px;
+      }
+
+      .dropdown-content {
+        width: 70px;
+      }
+
+      /* Sponsor Cards */
+      .sponsors-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px 8px;
+      }
+
+      .sponsor-card {
+        width: 135px;
+        padding: 12px;
+      }
+
+      .sponsor-img {
+        height: 80px;
+        margin-bottom: 10px;
+      }
+
+      .sponsor-name {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        margin-top: 6px;
+      }
+
+      /* Title Section */
+      .title-section {
+        padding: 20px 10px;
+      }
+
+      .title-section h1 {
+        font-size: 32px;
+      }
+
+      .title-section h2 {
+        font-size: 18px;
+      }
+    }
+
+    /* Very Narrow Screens */
+    @media (max-width: 360px) {
+      .sponsors-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .sponsor-card {
+        width: 140px;
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -188,6 +361,13 @@
     <a class="sponsor-link" href="https://www.amvrshop.com/" target="_blank">
       <div class="sponsor-card">
         <img class="sponsor-img" src="AMVR.png" alt="Sponsor 2">
+        <div class="sponsor-name">Click Me!</div>
+      </div>
+    </a>
+    <a class="sponsor-link" href="https://www.dubby.gg/" target="_blank">
+      <div class="sponsor-card">
+        <img class="sponsor-img" src="dubby.png" alt="Sponsor 3">
+
         <div class="sponsor-name">Click Me!</div>
       </div>
     </a>
