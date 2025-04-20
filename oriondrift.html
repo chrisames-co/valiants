@@ -36,6 +36,11 @@
       margin-bottom: -40px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
     nav a {
       color: white;
       margin: 0 15px;
@@ -186,6 +191,150 @@
       width: 40px;
       height: auto;
     }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      /* Header and Navigation */
+      header {
+        flex-direction: row; /* Logo and nav in same row */
+        align-items: center; /* Vertically center */
+        justify-content: flex-start; /* Align to far left */
+        padding: 8px 8px 8px 0; /* Reduced left padding */
+      }
+
+      header img {
+        height: 50px;
+        margin: 0 8px 0 -15px; /* Negative left margin like desktop */
+      }
+
+      nav {
+        flex-direction: row; /* Horizontal alignment */
+        flex-wrap: nowrap; /* Single row like desktop */
+        align-items: center;
+        justify-content: flex-start; /* Align to left */
+        margin: 0; /* No extra margin */
+      }
+
+      nav a {
+        margin: 0 6px; /* Consistent spacing */
+        padding: 5px 8px; /* Smaller buttons */
+        font-size: 13px; /* Smaller font */
+        border-radius: 4px;
+        text-align: center;
+        line-height: 1; /* Consistent height */
+      }
+
+      .dropdown {
+        width: auto; /* Fit content */
+        margin: 0 6px; /* Match nav a margin */
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%; /* Below parent */
+        width: 80px; /* Compact width */
+        background-color: transparent;
+      }
+
+      .dropdown-content a {
+        margin: 2px 0;
+        padding: 5px; /* Match nav a padding */
+        font-size: 13px; /* Match nav a font */
+        border-radius: 4px;
+        line-height: 1; /* Match nav a height */
+      }
+
+      /* Player Cards */
+      .players-container {
+        grid-template-columns: repeat(2, 1fr); /* Exactly 2 cards per row */
+        gap: 20px; /* Reduced gap */
+        padding: 20px 10px; /* Reduced padding */
+        justify-items: center; /* Center cards */
+        align-items: center; /* Vertically align */
+      }
+
+      .player-card {
+        width: 150px; /* Smaller card width */
+        padding: 15px; /* Reduced padding */
+      }
+
+      .player-img {
+        width: 80px; /* Smaller image */
+        height: 80px;
+        margin-bottom: 10px; /* Reduced margin */
+      }
+
+      .player-name {
+        font-size: 16px; /* Smaller font */
+        margin-top: 8px; /* Reduced margin */
+      }
+
+      .player-role-img img {
+        width: 30px; /* Smaller role icon */
+      }
+    }
+
+    /* Extra Small Devices */
+    @media (max-width: 480px) {
+      header img {
+        height: 40px; /* Smaller logo */
+        margin: 0 6px 0 -10px; /* Less negative margin */
+      }
+
+      nav a, .dropdown-content a {
+        font-size: 11px; /* Smaller font */
+        padding: 4px 6px; /* Smaller padding */
+        margin: 0 4px; /* Smaller spacing */
+      }
+
+      .dropdown {
+        margin: 0 4px; /* Match nav a margin */
+      }
+
+      .dropdown-content {
+        width: 70px; /* Smaller dropdown */
+      }
+
+      /* Player Cards */
+      .players-container {
+        grid-template-columns: repeat(2, 1fr); /* Maintain 2 cards per row */
+        gap: 15px; /* Further reduced gap */
+        padding: 20px 8px; /* Tighter padding */
+      }
+
+      .player-card {
+        width: 135px; /* Smaller card to fit 2 per row */
+        padding: 12px; /* Reduced padding */
+      }
+
+      .player-img {
+        width: 70px; /* Smaller image */
+        height: 70px;
+        margin-bottom: 8px; /* Reduced margin */
+      }
+
+      .player-name {
+        font-size: 14px; /* Smaller font */
+        margin-top: 6px; /* Reduced margin */
+      }
+
+      .player-role-img img {
+        width: 25px; /* Smaller role icon */
+      }
+    }
+
+    /* Very Narrow Screens */
+    @media (max-width: 360px) {
+      .players-container {
+        grid-template-columns: 1fr; /* Single column for very narrow screens */
+        gap: 12px; /* Minimal gap */
+      }
+
+      .player-card {
+        width: 140px; /* Slightly larger for single column */
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -208,7 +357,7 @@
 
   <section class="title-section">
     <h1>Orion Drift ROSTER</h1>
-    <h2>VALIANTS E-SPORTS&nbsp;</h2>
+    <h2>VALIANTS E-SPORTS</h2>
   </section>
 
   <div class="switch-buttons">
@@ -232,7 +381,7 @@
         <img src="V_cap.png" alt="Captain Icon">
       </div>
     </div>
-	  <div class="player-card">
+    <div class="player-card">
       <div class="player-img">
         <img src="Slip- Orion GTC.png" alt="Momentum">
       </div>
@@ -241,7 +390,7 @@
         <img src="V_Main_line.png" alt="Captain Icon">
       </div>
     </div>
-	  <div class="player-card">
+    <div class="player-card">
       <div class="player-img">
         <img src="Nuggs - Orion.png" alt="Momentum">
       </div>
@@ -250,7 +399,7 @@
         <img src="V_Main_line.png" alt="Captain Icon">
       </div>
     </div>
-	  <div class="player-card">
+    <div class="player-card">
       <div class="player-img">
         <img src="Plunge - Orion.png" alt="Momentum">
       </div>
@@ -259,7 +408,7 @@
         <img src="V_Main_line.png" alt="Captain Icon">
       </div>
     </div>
-	  <div class="player-card">
+    <div class="player-card">
       <div class="player-img">
         <img src="WizardGecko- Orion.png" alt="Momentum">
       </div>
@@ -282,7 +431,7 @@
         <img src="V_SUB.png" alt="Captain Icon">
       </div>
     </div>
-	  <div class="player-card">
+    <div class="player-card">
       <div class="player-img">
         <img src="No Player.png" alt="Momentum">
       </div>
@@ -291,7 +440,7 @@
         <img src="V_SUB.png" alt="Captain Icon">
       </div>
     </div>
-	  <div class="player-card">
+    <div class="player-card">
       <div class="player-img">
         <img src="No Player.png" alt="Momentum">
       </div>
@@ -300,7 +449,7 @@
         <img src="V_SUB.png" alt="Captain Icon">
       </div>
     </div>
-	  <div class="player-card">
+    <div class="player-card">
       <div class="player-img">
         <img src="No Player.png" alt="Momentum">
       </div>
@@ -309,7 +458,7 @@
         <img src="V_SUB.png" alt="Captain Icon">
       </div>
     </div>
-	  <div class="player-card">
+    <div class="player-card">
       <div class="player-img">
         <img src="No Player.png" alt="Momentum">
       </div>
