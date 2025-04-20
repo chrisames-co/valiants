@@ -52,6 +52,11 @@
       margin-bottom: -40px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
     nav a {
       color: white;
       margin: 0 15px;
@@ -228,7 +233,7 @@
       color: #ccc;
       line-height: 1.6;
       opacity: 0;
-      animation: fadeInText 2s forwards 0s; /* Removed delay for "Our Mission" */
+      animation: fadeInText 2s forwards 0s;
     }
 
     footer {
@@ -242,6 +247,148 @@
     footer p {
       font-size: 14px;
       color: #888;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      /* Header and Navigation */
+      header {
+        flex-direction: row; /* Keep logo and nav in same row */
+        align-items: center; /* Vertically center logo and nav */
+        justify-content: flex-start; /* Align to left */
+        padding: 8px;
+      }
+
+      header img {
+        height: 50px;
+        margin: 0 10px 0 0; /* Right margin to separate from nav */
+      }
+
+      nav {
+        flex-direction: row; /* Horizontal button alignment */
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        align-items: center;
+        justify-content: flex-start; /* Align buttons to left */
+        margin: 0; /* Remove margin for tight fit */
+      }
+
+      nav a {
+        margin: 2px 4px; /* Smaller margins for compact spacing */
+        padding: 5px 8px; /* Smaller padding for smaller buttons */
+        font-size: 13px; /* Smaller font size */
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      .dropdown {
+        width: auto; /* Fit content */
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%; /* Below parent button */
+        width: 80px; /* Compact dropdown width */
+        background-color: transparent;
+      }
+
+      .dropdown-content a {
+        margin: 2px 0;
+        padding: 5px; /* Match nav a padding */
+        font-size: 13px; /* Match nav a font size */
+        border-radius: 4px;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 60px 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      /* CTA Button */
+      .cta a {
+        padding: 12px 24px;
+        font-size: 18px;
+      }
+
+      /* Stats Section */
+      .stats-section {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 10px;
+      }
+
+      .stat-box {
+        width: 100%;
+        padding: 15px;
+      }
+
+      .stat-box h2 {
+        font-size: 36px;
+      }
+
+      .stat-box p {
+        font-size: 16px;
+      }
+
+      /* About Section */
+      .about {
+        padding: 30px 10px;
+        margin: 0 10px;
+      }
+
+      .about h2 {
+        font-size: 28px;
+      }
+
+      .about p {
+        font-size: 16px;
+      }
+
+      /* Footer */
+      footer p {
+        font-size: 12px;
+      }
+    }
+
+    /* Extra Small Devices */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .cta a {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+
+      .stat-box h2 {
+        font-size: 30px;
+      }
+
+      nav a, .dropdown-content a {
+        font-size: 11px; /* Even smaller font */
+        padding: 4px 6px; /* Even smaller padding */
+        margin: 2px 3px;
+      }
+
+      .dropdown-content {
+        width: 70px; /* Smaller dropdown width */
+      }
+
+      header img {
+        height: 40px; /* Smaller logo for tiny screens */
+      }
     }
   </style>
 </head>
@@ -295,7 +442,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Valiant E-Sports. All rights reserved.</p>
+    <p>© 2025 Valiant E-Sports. All rights reserved.</p>
   </footer>
 </body>
 </html>
