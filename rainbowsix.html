@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orion Drift Roster - GTC</title>
+  <title>Rainbow Six Siege Roster - Valiants E-Sports</title>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
   <style>
     * {
@@ -36,6 +36,11 @@
       margin-bottom: -40px;
     }
 
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
     nav a {
       color: white;
       margin: 0 15px;
@@ -59,8 +64,8 @@
     .dropdown-content {
       display: none;
       position: absolute;
-	  background-color: transparent;
-	  width: 100%;
+      background-color: transparent;
+      width: 100%;
       top: 30px;
       left: 0;
       z-index: 1;
@@ -70,13 +75,13 @@
       display: block;
       width: 100%;
       background-color: rgba(30, 30, 30, 0.8);
-      color: white; 
+      color: white;
       padding: 10px 0;
-      text-align: center;       
+      text-align: center;
       text-decoration: none;
       border-radius: 6px;
       margin: 5px 0;
-	  transition: all 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .dropdown-content a:hover {
@@ -104,29 +109,29 @@
 
     .switch-buttons {
       margin-top: 20px;
-	  display: flex;
-	  justify-content: center;
-	  gap: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
     }
 
-	.switch-buttons input[type="radio"] {
-	  display: none;
-	}
+    .switch-buttons input[type="radio"] {
+      display: none;
+    }
 
-	.switch-buttons label {
-	  background-color: #2e2e2e;
-	  color: white;
-	  padding: 10px 20px;
-	  border: 2px solid red;
-	  cursor: pointer;
-	  font-weight: bold;
-	  transition: all 0.2s ease;
-	}
-	  
-	.switch-buttons input[type="radio"]:checked + label {
-	  background-color: red;
-	  transform: scale(1.1);
-	}
+    .switch-buttons label {
+      background-color: #2e2e2e;
+      color: white;
+      padding: 10px 20px;
+      border: 2px solid red;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+      
+    .switch-buttons input[type="radio"]:checked + label {
+      background-color: red;
+      transform: scale(1.1);
+    }
 
     .players-container {
       display: grid;
@@ -175,10 +180,160 @@
       margin-top: 10px;
     }
 
+    .player-role-img {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .player-role-img img {
       width: 40px;
       height: auto;
-      margin-top: 8px;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      /* Header and Navigation */
+      header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 8px 8px 0;
+      }
+
+      header img {
+        height: 50px;
+        margin: 0 8px 0 -15px;
+      }
+
+      nav {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+        margin: 0;
+      }
+
+      nav a {
+        margin: 0 6px;
+        padding: 5px 8px;
+        font-size: 13px;
+        border-radius: 4px;
+        text-align: center;
+        line-height: 1;
+      }
+
+      .dropdown {
+        width: auto;
+        margin: 0 6px;
+      }
+
+      .dropdown-content {
+        position: absolute;
+        top: 100%;
+        width: 80px;
+        background-color: transparent;
+      }
+
+      .dropdown-content a {
+        margin: 2px 0;
+        padding: 5px;
+        font-size: 13px;
+        border-radius: 4px;
+        line-height: 1;
+      }
+
+      /* Player Cards */
+      .players-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px 10px;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .player-card {
+        width: 150px;
+        padding: 15px;
+      }
+
+      .player-img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+      }
+
+      .player-name {
+        font-size: 16px;
+        margin-top: 8px;
+      }
+
+      .player-role-img img {
+        width: 30px;
+      }
+    }
+
+    /* Extra Small Devices */
+    @media (max-width: 480px) {
+      header img {
+        height: 40px;
+        margin: 0 6px 0 -10px;
+      }
+
+      nav a, .dropdown-content a {
+        font-size: 11px;
+        padding: 4px 6px;
+        margin: 0 4px;
+      }
+
+      .dropdown {
+        margin: 0 4px;
+      }
+
+      .dropdown-content {
+        width: 70px;
+      }
+
+      /* Player Cards */
+      .players-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px 8px;
+      }
+
+      .player-card {
+        width: 135px;
+        padding: 12px;
+      }
+
+      .player-img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 8px;
+      }
+
+      .player-name {
+        font-size: 14px;
+        margin-top: 6px;
+      }
+
+      .player-role-img img {
+        width: 25px;
+      }
+    }
+
+    /* Very Narrow Screens */
+    @media (max-width: 360px) {
+      .players-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .player-card {
+        width: 140px;
+        padding: 12px;
+      }
     }
   </style>
 </head>
@@ -202,15 +357,15 @@
 
   <section class="title-section">
     <h1>RAINBOW SIX SIEGE ROSTER</h1>
-    <h2>VALIANTS E-SPORTS&nbsp;</h2>
+    <h2>VALIANTS E-SPORTS</h2>
   </section>
 
   <div class="switch-buttons">
     <input type="radio" id="naToggle" name="rosterToggle" checked onclick="showRoster('na')">
-	<label for="naToggle">NA</label>
-	<input type="radio" id="euToggle" name="rosterToggle" onClick="showRoster('eu')">
-	<label for="euToggle">EU</label>
-</div>
+    <label for="naToggle">NA</label>
+    <input type="radio" id="euToggle" name="rosterToggle" onClick="showRoster('eu')">
+    <label for="euToggle">EU</label>
+  </div>
 
   <div id="playerCount" style="font-size: 24px; color: white; margin-top: 30px;"></div>
 
@@ -310,8 +465,8 @@
   </section>
 
   <!-- EU Roster -->
-<section id="euRoster" class="players-container" style="display: none;">
-   <div class="player-card">
+  <section id="euRoster" class="players-container" style="display: none;">
+    <div class="player-card">
       <div class="player-img">
         <img src="No Player.png" alt="GTC Player 1">
       </div>
@@ -400,8 +555,8 @@
       <div class="player-role-img">
         <img src="V_SUB.png" alt="Anchor Icon">
       </div>
-    </div>
-</section>
+    </div> 
+  </section>
 
   <div style="text-align: center; margin-bottom: 50px;">
     <a href="pc.html" style="
@@ -420,44 +575,43 @@
   </div>
 
   <script>
-  function showRoster(roster) {
-    const naRoster = document.getElementById("naRoster");
-    const euRoster = document.getElementById("euRoster");
-    const playerCountDiv = document.getElementById("playerCount");
+    function showRoster(roster) {
+      const naRoster = document.getElementById("naRoster");
+      const euRoster = document.getElementById("euRoster");
+      const playerCountDiv = document.getElementById("playerCount");
 
-    // Show the selected roster, hide the other
-    if (roster === 'na') {
-      naRoster.style.display = 'grid';
-      euRoster.style.display = 'none';
+      // Show the selected roster, hide the other
+      if (roster === 'na') {
+        naRoster.style.display = 'grid';
+        euRoster.style.display = 'none';
 
-      // Count valid players in NA roster
-      const players = naRoster.querySelectorAll(".player-name");
-      let validCount = 0;
-      players.forEach(player => {
-        if (player.innerText.trim() !== "N/A") {
-          validCount++;
-        }
-      });
-      playerCountDiv.innerText = `NA Roster - ${validCount} Player${validCount !== 1 ? 's' : ''}`;
-    } else {
-      euRoster.style.display = 'grid';
-      naRoster.style.display = 'none';
+        // Count valid players in NA roster
+        const players = naRoster.querySelectorAll(".player-name");
+        let validCount = 0;
+        players.forEach(player => {
+          if (player.innerText.trim() !== "N/A") {
+            validCount++;
+          }
+        });
+        playerCountDiv.innerText = `NA Roster - ${validCount} Player${validCount !== 1 ? 's' : ''}`;
+      } else {
+        euRoster.style.display = 'grid';
+        naRoster.style.display = 'none';
 
-      // Count valid players in EU roster
-      const players = euRoster.querySelectorAll(".player-name");
-      let validCount = 0;
-      players.forEach(player => {
-        if (player.innerText.trim() !== "N/A") {
-          validCount++;
-        }
-      });
-      playerCountDiv.innerText = `EU Roster - ${validCount} Player${validCount !== 1 ? 's' : ''}`;
+        // Count valid players in EU roster
+        const players = euRoster.querySelectorAll(".player-name");
+        let validCount = 0;
+        players.forEach(player => {
+          if (player.innerText.trim() !== "N/A") {
+            validCount++;
+          }
+        });
+        playerCountDiv.innerText = `EU Roster - ${validCount} Player${validCount !== 1 ? 's' : ''}`;
+      }
     }
-  }
 
-  // Call once on load to count initial roster
-  window.onload = () => showRoster('na');
-</script>
-
+    // Call once on load to count initial roster
+    window.onload = () => showRoster('na');
+  </script>
 </body>
 </html>
