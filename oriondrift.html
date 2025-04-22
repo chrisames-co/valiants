@@ -49,6 +49,7 @@
       padding: 8px 12px;
       transition: all 0.3s ease;
       border-radius: 4px;
+      margin-top: 5px; /* Move buttons down by 5px; use -5px to move up */
     }
 
     nav a:hover {
@@ -57,8 +58,18 @@
     }
 
     .dropdown {
+      display: flex;
+      align-items: center;
       position: relative;
-      display: inline-block;
+      width: 100px;
+    }
+
+    .dropdown > a {
+      margin: 0; /* Remove horizontal margins to match other nav a */
+      width: 100%; /* Ensure consistent width */
+      text-align: center; /* Center text like other buttons */
+      padding: 8px 12px; /* Match nav a padding */
+      margin-top: 5px; /* Match nav a to move TEAM button with others */
     }
 
     .dropdown-content {
@@ -66,7 +77,7 @@
       position: absolute;
       background-color: transparent;
       width: 100%;
-      top: 30px;
+      top: 35px; /* Adjusted for button height, padding, and margin-top */
       left: 0;
       z-index: 1;
     }
@@ -196,142 +207,158 @@
     @media (max-width: 768px) {
       /* Header and Navigation */
       header {
-        flex-direction: row; /* Logo and nav in same row */
-        align-items: center; /* Vertically center */
-        justify-content: flex-start; /* Align to far left */
-        padding: 8px 8px 8px 0; /* Reduced left padding */
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 8px 8px 8px 0;
       }
 
       header img {
         height: 50px;
-        margin: 0 8px 0 -15px; /* Negative left margin like desktop */
+        margin: 0 8px 0 -15px;
       }
 
       nav {
-        flex-direction: row; /* Horizontal alignment */
-        flex-wrap: nowrap; /* Single row like desktop */
+        flex-direction: row;
+        flex-wrap: nowrap;
         align-items: center;
-        justify-content: flex-start; /* Align to left */
-        margin: 0; /* No extra margin */
+        justify-content: flex-start;
+        margin: 0;
       }
 
       nav a {
-        margin: 0 6px; /* Consistent spacing */
-        padding: 5px 8px; /* Smaller buttons */
-        font-size: 13px; /* Smaller font */
+        margin: 0 6px;
+        padding: 5px 8px;
+        font-size: 13px;
         border-radius: 4px;
         text-align: center;
-        line-height: 1; /* Consistent height */
+        line-height: 1;
+        margin-top: 5px; /* Match desktop to move buttons down */
       }
 
       .dropdown {
-        width: auto; /* Fit content */
-        margin: 0 6px; /* Match nav a margin */
+        width: auto;
+        margin: 0 6px;
+      }
+
+      .dropdown > a {
+        margin: 0 6px; /* Match nav a margins */
+        padding: 5px 8px; /* Match nav a padding */
+        font-size: 13px; /* Match nav a font size */
+        margin-top: 5px; /* Match nav a to move TEAM button */
       }
 
       .dropdown-content {
         position: absolute;
-        top: 100%; /* Below parent */
-        width: 80px; /* Compact width */
+        top: 100%;
+        width: 80px;
         background-color: transparent;
       }
 
       .dropdown-content a {
         margin: 2px 0;
-        padding: 5px; /* Match nav a padding */
-        font-size: 13px; /* Match nav a font */
+        padding: 5px;
+        font-size: 13px;
         border-radius: 4px;
-        line-height: 1; /* Match nav a height */
+        line-height: 1;
       }
 
       /* Player Cards */
       .players-container {
-        grid-template-columns: repeat(2, 1fr); /* Exactly 2 cards per row */
-        gap: 20px; /* Reduced gap */
-        padding: 20px 10px; /* Reduced padding */
-        justify-items: center; /* Center cards */
-        align-items: center; /* Vertically align */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px 10px;
+        justify-items: center;
+        align-items: center;
       }
 
       .player-card {
-        width: 150px; /* Smaller card width */
-        padding: 15px; /* Reduced padding */
+        width: 150px;
+        padding: 15px;
       }
 
       .player-img {
-        width: 80px; /* Smaller image */
+        width: 80px;
         height: 80px;
-        margin-bottom: 10px; /* Reduced margin */
+        margin-bottom: 10px;
       }
 
       .player-name {
-        font-size: 16px; /* Smaller font */
-        margin-top: 8px; /* Reduced margin */
+        font-size: 16px;
+        margin-top: 8px;
       }
 
       .player-role-img img {
-        width: 30px; /* Smaller role icon */
+        width: 30px;
       }
     }
 
     /* Extra Small Devices */
     @media (max-width: 480px) {
       header img {
-        height: 40px; /* Smaller logo */
-        margin: 0 6px 0 -10px; /* Less negative margin */
+        height: 40px;
+        margin: 0 6px 0 -10px;
       }
 
       nav a, .dropdown-content a {
-        font-size: 11px; /* Smaller font */
-        padding: 4px 6px; /* Smaller padding */
-        margin: 0 4px; /* Smaller spacing */
+        font-size: 11px;
+        padding: 4px 6px;
+        margin: 0 4px;
+        margin-top: 5px; /* Match desktop to move buttons down */
       }
 
       .dropdown {
-        margin: 0 4px; /* Match nav a margin */
+        margin: 0 4px;
+      }
+
+      .dropdown > a {
+        margin: 0 4px; /* Match nav a margins */
+        padding: 4px 6px; /* Match nav a padding */
+        font-size: 11px; /* Match nav a font size */
+        margin-top: 5px; /* Match nav a to move TEAM button */
       }
 
       .dropdown-content {
-        width: 70px; /* Smaller dropdown */
+        width: 70px;
       }
 
       /* Player Cards */
       .players-container {
-        grid-template-columns: repeat(2, 1fr); /* Maintain 2 cards per row */
-        gap: 15px; /* Further reduced gap */
-        padding: 20px 8px; /* Tighter padding */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 20px 8px;
       }
 
       .player-card {
-        width: 135px; /* Smaller card to fit 2 per row */
-        padding: 12px; /* Reduced padding */
+        width: 135px;
+        padding: 12px;
       }
 
       .player-img {
-        width: 70px; /* Smaller image */
+        width: 70px;
         height: 70px;
-        margin-bottom: 8px; /* Reduced margin */
+        margin-bottom: 8px;
       }
 
       .player-name {
-        font-size: 14px; /* Smaller font */
-        margin-top: 6px; /* Reduced margin */
+        font-size: 14px;
+        margin-top: 6px;
       }
 
       .player-role-img img {
-        width: 25px; /* Smaller role icon */
+        width: 25px;
       }
     }
 
     /* Very Narrow Screens */
     @media (max-width: 360px) {
       .players-container {
-        grid-template-columns: 1fr; /* Single column for very narrow screens */
-        gap: 12px; /* Minimal gap */
+        grid-template-columns: 1fr;
+        gap: 12px;
       }
 
       .player-card {
-        width: 140px; /* Slightly larger for single column */
+        width: 140px;
         padding: 12px;
       }
     }
