@@ -54,6 +54,7 @@
       padding: 10px 16px;
       border-radius: 6px;
       transition: all 0.3s ease;
+      margin-top: 5px; /* Move buttons down by 5px; use -5px to move up */
     }
 
     nav a:hover {
@@ -73,6 +74,9 @@
       margin: 0; /* Remove horizontal margins to match other nav a */
       width: 100%; /* Ensure consistent width */
       text-align: center; /* Center text like other buttons */
+      padding: 10px 16px; /* Match nav a padding */
+      line-height: 1; /* Ensure consistent vertical alignment */
+      margin-top: 5px; /* Match nav a to move TEAM button with others */
     }
 
     .dropdown-content {
@@ -80,7 +84,7 @@
       position: absolute;
       background-color: transparent;
       width: 100%;
-      top: 30px; /* Adjusted to align with button height */
+      top: 41px; /* Adjusted for button height, padding, and margin-top */
       left: 0;
       z-index: 1;
     }
@@ -231,6 +235,7 @@
         border-radius: 4px;
         text-align: center;
         line-height: 1;
+        margin-top: 5px; /* Match desktop to move buttons down */
       }
 
       .dropdown {
@@ -238,9 +243,17 @@
         margin: 0 6px;
       }
 
+      .dropdown > a {
+        margin: 0 6px; /* Match nav a margins */
+        padding: 5px 8px; /* Match nav a padding */
+        font-size: 13px; /* Match nav a font size */
+        line-height: 1; /* Match nav a line-height */
+        margin-top: 5px; /* Match nav a to move TEAM button */
+      }
+
       .dropdown-content {
         position: absolute;
-        top: 100%;
+        top: 100%; /* Adjusted for mobile padding and margin */
         width: 80px;
         background-color: transparent;
       }
@@ -304,10 +317,19 @@
         font-size: 11px;
         padding: 4px 6px;
         margin: 0 4px;
+        margin-top: 5px; /* Match desktop to move buttons down */
       }
 
       .dropdown {
         margin: 0 4px;
+      }
+
+      .dropdown > a {
+        margin: 0 4px; /* Match nav a margins */
+        padding: 4px 6px; /* Match nav a padding */
+        font-size: 11px; /* Match nav a font size */
+        line-height: 1; /* Match nav a line-height */
+        margin-top: 5px; /* Match nav a to move TEAM button */
       }
 
       .dropdown-content {
