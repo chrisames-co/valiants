@@ -55,6 +55,7 @@
       padding: 8px 12px;
       transition: all 0.3s ease;
       border-radius: 6px;
+      margin-top: 5px; /* Move buttons down by 5px; use -5px to move up */
     }
 
     nav a:hover {
@@ -66,6 +67,15 @@
     .dropdown {
       position: relative;
       display: inline-block;
+      width: 100px;
+    }
+
+    .dropdown > a {
+      margin: 0; /* Remove horizontal margins to match other nav a */
+      width: 100%; /* Ensure consistent width */
+      text-align: center; /* Center text like other buttons */
+      padding: 8px 12px; /* Match nav a padding */
+      margin-top: 5px; /* Match nav a to move TEAM button with others */
     }
 
     .dropdown-content {
@@ -73,7 +83,7 @@
       position: absolute;
       background-color: transparent;
       width: 100%;
-      top: 30px;
+      top: 35px; /* Adjusted for button height, padding, and margin-top */
       left: 0;
       z-index: 1;
     }
@@ -189,16 +199,29 @@
         border-radius: 4px;
         text-align: center;
         line-height: 1;
+        margin-top: 5px; /* Match desktop to move buttons down */
       }
 
       .dropdown {
+        display: flex;
+        align-items: center;
+        position: relative;
         width: auto;
         margin: 0 6px;
       }
 
+      .dropdown > a {
+        margin: 0 6px; /* Match nav a margins */
+        padding: 5px 8px; /* Match nav a padding */
+        font-size: 13px; /* Match nav a font size */
+        width: auto; /* Adjust for mobile */
+        text-align: center;
+        margin-top: 5px; /* Match nav a to move TEAM button */
+      }
+
       .dropdown-content {
         position: absolute;
-        top: 100%;
+        top: 100%; /* Dynamically adjust to button height */
         width: 80px;
         background-color: transparent;
       }
@@ -267,10 +290,18 @@
         font-size: 11px;
         padding: 4px 6px;
         margin: 0 4px;
+        margin-top: 5px; /* Match desktop to move buttons down */
       }
 
       .dropdown {
         margin: 0 4px;
+      }
+
+      .dropdown > a {
+        margin: 0 4px; /* Match nav a margins */
+        padding: 4px 6px; /* Match nav a padding */
+        font-size: 11px; /* Match nav a font size */
+        margin-top: 5px; /* Match nav a to move TEAM button */
       }
 
       .dropdown-content {
@@ -367,7 +398,6 @@
     <a class="sponsor-link" href="https://www.dubby.gg/" target="_blank">
       <div class="sponsor-card">
         <img class="sponsor-img" src="dubby.png" alt="Sponsor 3">
-
         <div class="sponsor-name">Click Me!</div>
       </div>
     </a>
