@@ -74,9 +74,16 @@
     }
 
     .dropdown {
+      display: flex;
+      align-items: center;
       position: relative;
-      display: inline-block;
       width: 100px;
+    }
+
+    .dropdown > a {
+      margin: 0; /* Remove horizontal margins to match other nav a */
+      width: 100%; /* Ensure consistent width */
+      text-align: center; /* Center text like other buttons */
     }
 
     .dropdown-content {
@@ -84,7 +91,7 @@
       position: absolute;
       background-color: transparent;
       width: 100%;
-      top: 30px;
+      top: 30px; /* Adjusted to align with button height */
       left: 0;
       z-index: 1;
     }
@@ -251,54 +258,59 @@
 
     /* Mobile Styles */
     @media (max-width: 768px) {
-      /* Header and Navigation */
       header {
-        flex-direction: row; /* Keep logo and nav in same row */
-        align-items: center; /* Vertically center logo and nav */
-        justify-content: flex-start; /* Align to left */
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
         padding: 8px;
       }
 
       header img {
         height: 50px;
-        margin: 0 10px 0 0; /* Right margin to separate from nav */
+        margin: 0 10px 0 0;
       }
 
       nav {
-        flex-direction: row; /* Horizontal button alignment */
-        flex-wrap: wrap; /* Allow wrapping if needed */
+        flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: flex-start; /* Align buttons to left */
-        margin: 0; /* Remove margin for tight fit */
+        justify-content: flex-start;
+        margin: 0;
       }
 
       nav a {
-        margin: 2px 4px; /* Smaller margins for compact spacing */
-        padding: 5px 8px; /* Smaller padding for smaller buttons */
-        font-size: 13px; /* Smaller font size */
+        margin: 2px 4px;
+        padding: 5px 8px;
+        font-size: 13px;
         border-radius: 4px;
         text-align: center;
       }
 
       .dropdown {
-        width: auto; /* Fit content */
+        width: auto;
+        align-items: center;
+      }
+
+      .dropdown > a {
+        margin: 2px 4px; /* Match nav a margins */
+        padding: 5px 8px; /* Match nav a padding */
+        font-size: 13px; /* Match nav a font size */
       }
 
       .dropdown-content {
         position: absolute;
-        top: 100%; /* Below parent button */
-        width: 80px; /* Compact dropdown width */
+        top: 100%;
+        width: 80px;
         background-color: transparent;
       }
 
       .dropdown-content a {
         margin: 2px 0;
-        padding: 5px; /* Match nav a padding */
-        font-size: 13px; /* Match nav a font size */
+        padding: 5px;
+        font-size: 13px;
         border-radius: 4px;
       }
 
-      /* Hero Section */
       .hero {
         padding: 60px 10px;
       }
@@ -311,13 +323,11 @@
         font-size: 18px;
       }
 
-      /* CTA Button */
       .cta a {
         padding: 12px 24px;
         font-size: 18px;
       }
 
-      /* Stats Section */
       .stats-section {
         flex-direction: column;
         gap: 20px;
@@ -337,7 +347,6 @@
         font-size: 16px;
       }
 
-      /* About Section */
       .about {
         padding: 30px 10px;
         margin: 0 10px;
@@ -351,13 +360,11 @@
         font-size: 16px;
       }
 
-      /* Footer */
       footer p {
         font-size: 12px;
       }
     }
 
-    /* Extra Small Devices */
     @media (max-width: 480px) {
       .hero h1 {
         font-size: 28px;
@@ -377,17 +384,23 @@
       }
 
       nav a, .dropdown-content a {
-        font-size: 11px; /* Even smaller font */
-        padding: 4px 6px; /* Even smaller padding */
+        font-size: 11px;
+        padding: 4px 6px;
         margin: 2px 3px;
       }
 
+      .dropdown > a {
+        margin: 2px 3px; /* Match nav a margins */
+        padding: 4px 6px; /* Match nav a padding */
+        font-size: 11px; /* Match nav a font size */
+      }
+
       .dropdown-content {
-        width: 70px; /* Smaller dropdown width */
+        width: 70px;
       }
 
       header img {
-        height: 40px; /* Smaller logo for tiny screens */
+        height: 40px;
       }
     }
   </style>
@@ -408,41 +421,41 @@
       <a href="social.html">SOCIAL</a>
       <a href="sponsors.html">SPONSORS</a>
     </nav>
-  </header>
+</header>
 
-  <section class="hero">
-    <h1>WELCOME TO VALIANTS E-SPORTS</h1>
-    <p>Where passion meets performance in the world of competitive gaming.</p>
-  </section>
+<section class="hero">
+  <h1>WELCOME TO VALIANTS E-SPORTS</h1>
+  <p>Where passion meets performance in the world of competitive gaming.</p>
+</section>
 
-  <div class="cta">
-    <a href="https://discord.gg/gRJ7QBP2" target="_blank">Join The Action</a>
+<div class="cta">
+  <a href="https://discord.gg/gRJ7QBP2" target="_blank">Join The Action</a>
+</div>
+
+<section class="stats-section">
+  <div class="stat-box">
+    <h2>7900</h2>
+    <p>Discord Members</p>
   </div>
+  <div class="stat-box">
+    <h2>34</h2>
+    <p>Team Players</p>
+  </div>
+  <div class="stat-box">
+    <h2>9</h2>
+    <p>Games</p>
+  </div>
+</section>
 
-  <section class="stats-section">
-    <div class="stat-box">
-      <h2>7900</h2>
-      <p>Discord Members</p>
-    </div>
-    <div class="stat-box">
-      <h2>34</h2>
-      <p>Team Players</p>
-    </div>
-    <div class="stat-box">
-      <h2>9</h2>
-      <p>Games</p>
-    </div>
-  </section>
+<section class="about">
+  <h2>OUR MISSION</h2>
+  <p>
+    Valiants eSports is dedicated to building an elite community of VR and PC competitors. From VR eSports to PC eSports, we strive to lead the way in fair play, training, and teamwork.
+  </p>
+</section>
 
-  <section class="about">
-    <h2>OUR MISSION</h2>
-    <p>
-      Valiants eSports is dedicated to building an elite community of VR and PC competitors. From VR eSports to PC eSports, we strive to lead the way in fair play, training, and teamwork.
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Valiant E-Sports. All rights reserved.</p>
-  </footer>
+<footer>
+  <p>© 2025 Valiant E-Sports. All rights reserved.</p>
+</footer>
 </body>
 </html>
